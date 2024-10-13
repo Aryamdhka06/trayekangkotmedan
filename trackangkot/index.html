@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <title>AngkotTracker - Track Angkot</title>
+  <style>
+    /* Navbar customization */
+    .navbar {
+      background-color: #212529 !important;
+      border-bottom: 3px solid #ffc107;
+    }
+
+    .nav-link.active {
+      color: #ffc107 !important;
+    }
+
+    .nav-link:hover {
+      color: #ffc107;
+    }
+
+    .btn-outline-light {
+      border-color: #ffc107;
+      color: #ffc107;
+      transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    }
+
+    .btn-outline-light:hover {
+      background-color: #ffc107;
+      color: black;
+    }
+
+    /* Accordion customization */
+    .accordion-button {
+      background-color: #343a40;
+      color: #ffc107;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .accordion-button:hover {
+      background-color: #ffc107;
+      color: black;
+    }
+
+    .accordion-item {
+      background-color: #212529;
+      border: none;
+      border-bottom: 1px solid #ffc107; /* Garis pembatas antar angkot */
+    }
+
+    .accordion-body {
+      background-color: #343a40;
+      color: white;
+    }
+
+    /* Add smooth collapse/expand transition */
+    .accordion-collapse {
+      transition: max-height 0.5s ease;
+    }
+
+    /* Body background */
+    body {
+      background-color: #1a1a1a;
+    }
+
+    /* Search box customization */
+    .form-control {
+      border: 2px solid #ffc107;
+      color: white;
+      background-color: #212529;
+    }
+
+    .form-control:focus {
+      box-shadow: none;
+      border-color: #ffc107;
+    }
+
+    .form-control::placeholder {
+      color: #ffc107;
+    }
+
+    /* Button customization */
+    button:focus {
+      box-shadow: none;
+    }
+  </style>
+</head>
+
+<div class="bg-dark text-light">
+  <!-- nav section start -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="../index.html">AngkotTracker</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="../trackangkot/">Track Angkot</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Others
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="../informasi/">Angkot</a></li>
+              <li><a class="dropdown-item" href="../tentangkami/">Tentang Kami</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-light" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- nav section end -->
+
+  <!-- Body dengan 10 daftar angkot -->
+  <div class="container my-5">
+    <div class="accordion accordion-flush" id="accordionFlushExample">
+      <!-- Accordion Items -->
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+            Angkot Nomor 01 (Kuning)
+          </button>
+        </h2>
+        <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">Rute: Simp. Permina – Tanjung Morawa – Simp. Kayu Besar – Lubuk Pakam</div>
+        </div>
+      </div>
+      <!-- Angkot Nomor 02 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+            Angkot Nomor 02 (Kuning)
+          </button>
+        </h2>
+        <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">Rute: Jl. Karya – Bundaran Sekip – Petisah – Plaza Medan Fair – Jl. Iskandar Muda – Simp. Brimob – Simp. Kampus – P. Bulan – Simp. Pos – Titi Kuning – Simp. Limun – Jl. Sisingamangaraja – Jl. Halat – Jl. AR Hakim – Jl. Denai – Perumnas Mandala</div>
+        </div>
+      </div>
+      <!-- Angkot Nomor 03 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+            Angkot Nomor 03 (Kuning)
+          </button>
+        </h2>
+        <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">Rute: POLDASU – Amplas – Jl. Sisingamangaraja – Garuda Plaza Hotel – Sambu</div>
+        </div>
+      </div>
+      <!-- Angkot KPUM 07 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+            Angkot KPUM 07 (Kuning)
+          </button>
+        </h2>
+        <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">Rute: Jalan T. Amplas – Teladan-Letda Sujono / Batas Kota – PP07 Amplas – Jl. Sisingamangaraja – Aksara – Jl. Pancing – Tembung</div>
+        </div>
+      </div>
+      <!-- Angkot CV Medan Kobun 07 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+            Angkot CV Medan Kobun 07 (Kuning)
+          </button>
+        </h2>
+        <div id="flush-collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">Rute: Jalan Tembung / Bts Kota – Veteran / P. Psr. PP</div>
+        </div>
+      </div>
+      <!-- Tambahkan accordion item untuk angkot lainnya -->
+<!-- Angkot KPUM 08 -->
+<div class="accordion-item">
+  <h2 class="accordion-header">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+      data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+      Angkot KPUM 08 (Kuning)
+    </button>
+  </h2>
+  <div id="flush-collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+    <div class="accordion-body">Rute: Jl. Palang Merah – B Katamso – Istana Maimun – Pancing-Titi Kuning – Deli Tua</div>
+  </div>
+</div>
+
+<!-- Angkot KPUM 10 -->
+<div class="accordion-item">
+  <h2 class="accordion-header">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+      data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven">
+      Angkot KPUM 10 (Kuning)
+    </button>
+  </h2>
+  <div id="flush-collapseSeven" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+    <div class="accordion-body">Rute: Perumnas Simalingkar – Simp. Pos – Padang Bulan – Simp. Kampus – Simp. Brimob – Pringgan – Jl. Hayam Wuruk – Jl. S. Parman – Jl. Jend. Sudirman – Taman Beringin – Kantor Gubernur – Sun Plaza – Simp. Selecta – Jl. Palang Merah – Jl. Sutomo – Sambu – Aksara</div>
+  </div>
+</div>
+<div class="accordion-item">
+  <h2 class="accordion-header">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+      data-bs-target="#flush-collapseEight" aria-expanded="false" aria-controls="flush-collapseEight">
+      Angkot KPUM 11 (Kuning)
+    </button>
+  </h2>
+  <div id="flush-collapseEight" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+    <div class="accordion-body">Rute: Jalan P. Simalingkar – Pd. Bulan – Pringgan- Lap. Merdeka- Pancing / Batas Kota
+      – PP</div>
+  </div>
+</div>
+<div class="accordion-item">
+  <h2 class="accordion-header">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+      data-bs-target="#flush-collapseNine" aria-expanded="false" aria-controls="flush-collapseNine">
+      KPUM Kuning Nomor 13
+    </button>
+  </h2>
+  <div id="flush-collapseNine" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+    <div class="accordion-body">Rute: Jalan Tuntungan / Bts Kota – Rs. Mina / UMA – PP</div>
+  </div>
+</div>
+<div class="accordion-item">
+  <h2 class="accordion-header">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+      data-bs-target="#flush-collapse10" aria-expanded="false" aria-controls="flush-collapse10">
+      KPUM Kuning Nomor 14
+    </button>
+  </h2>
+  <div id="flush-collapse10" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+    <div class="accordion-body">Rute: Jalan Tembung – Tj. Selamat / Batas Kota – PP</div>
+  </div>
+</div>
+<div class="accordion-item">
+  <h2 class="accordion-header">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+      data-bs-target="#flush-collapse11" aria-expanded="false" aria-controls="flush-collapse11">
+      KPUM Kuning Nomor 17
+    </button>
+  </h2>
+  <div id="flush-collapse11" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+    <div class="accordion-body">Rute: Jalan Karya Jasa / B. Kota – Belawan – PP</div>
+  </div>
+</div>
+<div class="accordion-item">
+  <h2 class="accordion-header">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+      data-bs-target="#flush-collapse12" aria-expanded="false" aria-controls="flush-collapse12">
+      KPUM Kuning Nomor 18
+    </button>
+  </h2>
+  <div id="flush-collapse12" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+    <div class="accordion-body">Rute: Jalan Tj. Selamat / Bts Kota – P. Mandala PP</div>
+  </div>
+</div>
+<div class="accordion-item">
+  <h2 class="accordion-header">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+      data-bs-target="#flush-collapse13" aria-expanded="false" aria-controls="flush-collapse13">
+      KPUM Kuning Nomor 23
+    </button>
+  </h2>
+  <div id="flush-collapse13" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+    <div class="accordion-body">Rute: Jalan T. Pinang Baris – B. Katamso / Bts Kota – PP</div>
+  </div>
+</div>
+<div class="accordion-item">
+  <h2 class="accordion-header">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+      data-bs-target="#flush-collapse14" aria-expanded="false" aria-controls="flush-collapse14">
+      KPUM Kuning Nomor 27
+    </button>
+  </h2>
+  <div id="flush-collapse14" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+    <div class="accordion-body">Rute: Jalan Metrologi – Marendal / Batas Kota – PP</div>
+  </div>
+</div>
+<div class="accordion-item">
+  <h2 class="accordion-header">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+      data-bs-target="#flush-collapse15" aria-expanded="false" aria-controls="flush-collapse15">
+      KPUM Kuning Nomor 28
+    </button>
+  </h2>
+  <div id="flush-collapse15" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+    <div class="accordion-body">Rute: Jalan Letda Sujono / Bts Kota – Gabion – PP</div>
+  </div>
+</div>
+<div class="accordion-item">
+  <h2 class="accordion-header">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+      data-bs-target="#flush-collapse16" aria-expanded="false" aria-controls="flush-collapse16">
+      KPUM Kuning Nomor 35
+    </button>
+  </h2>
+  <div id="flush-collapse16" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+    <div class="accordion-body">Rute: Jalan Tuntungan / Batas Kota – R Potong – PP</div>
+  </div>
+</div>
+<div class="accordion-item">
+  <h2 class="accordion-header">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+      data-bs-target="#flush-collapse17" aria-expanded="false" aria-controls="flush-collapseT17">
+      KPUM Kuning Nomor 37
+    </button>
+  </h2>
+  <div id="flush-collapse17" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+    <div class="accordion-body">Rute: Jalan Johor / Pasar V / Bts Kota – T.Belawan – PP</div>
+  </div>
+</div>
+<div class="accordion-item">
+  <h2 class="accordion-header">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+      data-bs-target="#flush-collapse18" aria-expanded="false" aria-controls="flush-collapse18">
+      KPUM Kuning Nomor 38
+    </button>
+  </h2>
+  <div id="flush-collapse18" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+    <div class="accordion-body">Rute: Jalan Rs. Adam Malik – Desa Martoba / Bts Kota – PP</div>
+  </div>
+</div>
+
+<div class="accordion-item">
+  <h2 class="accordion-header">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+      data-bs-target="#flush-collapse19" aria-expanded="false" aria-controls="flush-collapse19">
+      KPUM Kuning Nomor 39
+    </button>
+  </h2>
+  <div id="flush-collapse19" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+    <div class="accordion-body">Rute: Jalan T. P.Baris – Pertiwi / SMU XI / Bts Kota – PP</div>
+  </div>
+</div>
+
+<div class="accordion-item">
+  <h2 class="accordion-header">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+      data-bs-target="#flush-collapse20" aria-expanded="false" aria-controls="flush-collapse20">
+      KPUM Kuning Nomor 40
+    </button>
+  </h2>
+  <div id="flush-collapse20" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+    <div class="accordion-body">Rute: Jalan Kelambir Lima / Bts Kota – P. Mandala – PP</div>
+  </div>
+</div>
+
+<div class="accordion-item">
+  <h2 class="accordion-header">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+      data-bs-target="#flush-collapse21" aria-expanded="false" aria-controls="flush-collapseT21">
+      KPUM Kuning Nomor 42
+    </button>
+  </h2>
+  <div id="flush-collapse21" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+    <div class="accordion-body">Rute: Jalan Johor – STM – S.Limun – Pasar VII</div>
+  </div>
+</div>
+<div class="accordion-item">
+  <h2 class="accordion-header">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+      data-bs-target="#flush-collapse22" aria-expanded="false" aria-controls="flush-collapse22">
+      KPUM Kuning Nomor 45
+    </button>
+  </h2>
+  <div id="flush-collapse22" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+    <div class="accordion-body">Rute: Jalan Desa Simalingkar B – Letda Sujono / Bts Kota – PP</div>
+  </div>
+</div>
+<div class="accordion-item">
+  <h2 class="accordion-header">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+      data-bs-target="#flush-collapse23" aria-expanded="false" aria-controls="flush-collapse23">
+      KPUM Kuning Nomor 46
+    </button>
+  </h2>
+  <div id="flush-collapse23" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+    <div class="accordion-body">Rute: Jalan Tj. Selamat- Sei Serayu- Jl Darusalam- Gatot Subroto- Berastagi Swalayan –
+      Letda Sujono- Tembung – PP</div>
+  </div>
+</div>
+<div class="accordion-item">
+  <h2 class="accordion-header">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+      data-bs-target="#flush-collapse234" aria-expanded="false" aria-controls="flush-collapse234">
+      KPUM Kuning Nomor 47
+    </button>
+  </h2>
+  <div id="flush-collapse234" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+    <div class="accordion-body">Rute: Jalan T. Pinang Baris – Letda Sujono / Bts Kota – PP</div>
+  </div>
+</div>
+<div class="accordion-item">
+  <h2 class="accordion-header">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+      data-bs-target="#flush-collapse25" aria-expanded="false" aria-controls="flush-collapse25">
+      KPUM Kuning Nomor 50
+    </button>
+  </h2>
+  <div id="flush-collapse25" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+    <div class="accordion-body">Rute: Jalan T. Pinang Baris – Jermal XI / Bts Kota- PP</div>
+  </div>
+</div>
+<div class="accordion-item">
+  <h2 class="accordion-header">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+      data-bs-target="#flush-collapse26" aria-expanded="false" aria-controls="flush-collapse26">
+      KPUM Kuning Nomor 51
+    </button>
+  </h2>
+  <div id="flush-collapse26" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+    <div class="accordion-body">Rute: Jalan T. Pinang Baris – Desa Jambu / Bts Kota – PP</div>
+  </div>
+</div>
+<div class="accordion-item">
+  <h2 class="accordion-header">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+      data-bs-target="#flush-collapse27" aria-expanded="false" aria-controls="flush-collapse27">
+      KPUM Kuning Nomor 52
+    </button>
+  </h2>
+  <div id="flush-collapse27" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+    <div class="accordion-body">Rute: Jalan Padang Bulan – Titi Kuning – Pringgan – Pinang Baris</div>
+  </div>
+</div>
+<div class="accordion-item">
+  <h2 class="accordion-header">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+      data-bs-target="#flush-collapse28" aria-expanded="false" aria-controls="flush-collapse28">
+      KPUM Kuning Nomor 54
+    </button>
+  </h2>
+  <div id="flush-collapse28" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+    <div class="accordion-body">Rute: Jalan Pasar VII Tj. M. Hilir – Tuntungan / Bts Kota – PP</div>
+  </div>
+</div>
+<div class="accordion-item">
+  <h2 class="accordion-header">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+      data-bs-target="#flush-collapse29" aria-expanded="false" aria-controls="flush-collapse29">
+      KPUM Kuning Nomor 55
+    </button>
+  </h2>
+  <div id="flush-collapse29" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+    <div class="accordion-body">Rute: Jalan T. Amplas – Letda Sujono / Bts Kota – PP</div>
+  </div>
+</div>
+<div class="accordion-item">
+  <h2 class="accordion-header">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+      data-bs-target="#flush-collapse30" aria-expanded="false" aria-controls="flush-collapse30">
+      KPUM Kuning Nomor 56
+    </button>
+  </h2>
+  <div id="flush-collapse30" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+    <div class="accordion-body">Rute: Jalan Tj. Selamat – Lau Dendang / Bts Kota – PP</div>
+  </div>
+</div>
+<div class="accordion-item">
+  <h2 class="accordion-header">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+      data-bs-target="#flush-collapse17" aria-expanded="false" aria-controls="flush-collapseT17">
+      KPUM Kuning Nomor 57
+    </button>
+  </h2>
+  <div id="flush-collapse17" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+    <div class="accordion-body">Rute: Jalan Tj. Selamat / Bts Kota – P. Mandala – PP</div>
+  </div>
+</div>
+<div class="accordion-item">
+  <h2 class="accordion-header">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+      data-bs-target="#flush-collapse131" aria-expanded="false" aria-controls="flush-collapse131">
+      KPUM Kuning Nomor 59
+    </button>
+  </h2>
+  <div id="flush-collapse131" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+    <div class="accordion-body">Rute: Jalan P. Mandala – B. Katamso / Bts Kota – PP</div>
+  </div>
+</div>
+<div class="accordion-item">
+  <h2 class="accordion-header">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+      data-bs-target="#flush-collapse31" aria-expanded="false" aria-controls="flush-collapseT17">
+      KPUM Kuning Nomor 60
+    </button>
+  </h2>
+  <div id="flush-collapse31" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+    <div class="accordion-body">Rute: Jalan P. Simalingkar Martoba / Bts Kota – PP</div>
+  </div>
+</div>
+<div class="accordion-item">
+  <h2 class="accordion-header">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+      data-bs-target="#flush-collapse32" aria-expanded="false" aria-controls="flush-collapse32">
+      KPUM Kuning Nomor 64
+    </button>
+  </h2>
+  <div id="flush-collapse32" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+    <div class="accordion-body">Rute: Jalan Amplas- Sp. Limun- Sun Plaza-Pringgan</div>
+  </div>
+</div>
+<div class="accordion-item">
+  <h2 class="accordion-header">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+      data-bs-target="#flush-collapse33" aria-expanded="false" aria-controls="flush-collapse33">
+      KPUM Kuning Nomor 65
+    </button>
+  </h2>
+  <div id="flush-collapse33" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+    <div class="accordion-body">Rute: Jalan Kelambir V / Bts Kota – T. Pinang Baris – PP</div>
+  </div>
+</div>
+<div class="accordion-item">
+  <h2 class="accordion-header">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+      data-bs-target="#flush-collapse34" aria-expanded="false" aria-controls="flush-collapse34">
+      KPUM Kuning Nomor 68
+    </button>
+  </h2>
+  <div id="flush-collapse34" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+    <div class="accordion-body">Rute: Jalan Kelambir V / Bts Kota – PP</div>
+  </div>
+</div>
+<div class="accordion-item">
+  <h2 class="accordion-header">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+      data-bs-target="#flush-collapse35" aria-expanded="false" aria-controls="flush-collapse35">
+      KPUM Kuning Nomor 45
+    </button>
+  </h2>
+  <div id="flush-collapse35" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+    <div class="accordion-body">Rute: Jalan Letda Sujono / Batas Kota – Jln. Gaperta – PP</div>
+  </div>
+</div>
+
+      <!-- Tambahkan accordion item untuk angkot lainnya dengan ID berbeda -->
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
